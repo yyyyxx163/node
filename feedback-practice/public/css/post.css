@@ -1,0 +1,21 @@
+.name, .message{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+.message{
+    margin-top: 20px
+}
+button{
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: palegreen;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px
+}

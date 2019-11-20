@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/index.css">
+    <title>首页</title>
+</head>
+<body>
+    <div class="cantainer">
+        <h1>留言板首页</h1>
+        <a href="post">发表留言</a>
+        <ul>
+            {{each commens}}
+            <li>
+                <div class="name-message">
+                    <span>{{$value.name}}</span>
+                    <span>{{$value.message}}</span>
+                </div>
+                <div class="time">{{$value.dateTime}}</div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</body>
+</html>

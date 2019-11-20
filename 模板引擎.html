@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模板引擎</title>
+</head>
+<body>
+
+    <!-- 引入模版引擎 -->
+    <script src="./node_modules/art-template/lib/template-web.js"></script>
+    <!-- 声明一个模板 -->
+    <!-- 模板字符串不关心你的字符串内容，只关心自己能认识的模板标记语法，例如{{}}, {{}}被成为八字胡语法 -->
+    <script type="text/template" id="userTable">
+        <table>
+            <thead>
+                <th>id</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+            </thead>
+            <tbody>
+                {{ each datas }}
+                    <tr>
+                        <td>{{$index}}</td>
+                        <td>{{$value.name}}</td>
+                        <td>{{$value.gender}}</td>
+                        <td>{{$value.age}}</td>
+                    </tr>
+                {{ /each }}
+            </tbody>
+        </table>
+    </script>
+    <!-- <div id="a">
+
+    </div> -->
+    <script type="text/javascript">
+        var ret = template('userTable', {
+            datas: [
+                {
+                    name: '小李飞刀',
+                    gender: 1,
+                    age:20
+                },
+                {
+                    name: '小红飞刀',
+                    gender: 0,
+                    age:20
+                },
+                {
+                    name: '小小李飞刀',
+                    gender: 1,
+                    age:10
+                }
+            ]
+        })
+        console.log(ret)
+        // let a = document.getElementById('a');
+        // a.innerHTML = ret;
+    </script>
+</body>
+</html>

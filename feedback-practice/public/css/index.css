@@ -1,0 +1,25 @@
+.cantainer a{
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: palegreen;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px
+}
+.cantainer ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px
+}
+.cantainer ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type:none;
+    border: 1px solid #ddd;
+    padding: 3px 10px;
+}

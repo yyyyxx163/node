@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+        在服务器端中：文件中的路径就不要写相对路径了。
+        因为这个时候所有的资源是通过url标识来获取的 
+        我的服务器开放了/public/目录， 所以现在请求路径写成:/public/xxx
+        /这里就是url跟路径的意思。
+        浏览器发送真正发送请求的时候会自动把http://127.0.0.1:3000拼上
+
+        不要考虑文件路径，把所有的文件路径都想象成url地址
+     -->
+    <link rel="stylesheet" href="public/css/index.css">
+    <title>首页</title>
+</head>
+<body>
+    <div class="header">
+        <h1>留言板</h1>
+        <a href="post">发表留言</a>
+    </div>
+    <div class="comments">
+        <ul class="list-group">
+            {{each comments}}
+                <li class="list-item">
+                    {{$value.name}}:{{$value.message}}  --{{$value.dateTime}}
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</body>
+</html>
